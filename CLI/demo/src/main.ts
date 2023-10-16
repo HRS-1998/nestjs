@@ -10,14 +10,14 @@ async function bootstrap() {
     type: VersioningType.URI,
   });
   console.log(session);
-  app.use(
-    session({
-      secret: '签名',
-      name: 'cookie名字',
-      rolling: true,
-      cookie: { httpOnly: true, maxAge: 999999 },
-    }),
-  );
+  // app.use(
+  //   session({
+  //     secret: '签名',
+  //     name: 'cookie名字',
+  //     rolling: true,
+  //     cookie: { httpOnly: true, maxAge: 999999 },
+  //   }),
+  // );
   await app.listen(3000);
 }
 bootstrap();

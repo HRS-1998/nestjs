@@ -8,6 +8,12 @@ import { UserModule } from './user/user.module';
 @Module({
   imports: [UserModule],
   controllers: [AppController],
-  providers: [AppService],
+  // providers: [AppService],
+  providers: [
+    {
+      provide: 'ABC',
+      useClass: AppService,
+    },
+  ],
 })
 export class AppModule {}

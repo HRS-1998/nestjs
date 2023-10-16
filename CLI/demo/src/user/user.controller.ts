@@ -3,18 +3,11 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
-  Delete,
-  Request,
   Query,
   Headers,
-  HttpCode,
 } from '@nestjs/common';
 import { UserService } from './user.service';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
-import { log } from 'console';
 
 @Controller('user')
 // @Controller({
@@ -50,8 +43,8 @@ export class UserController {
 
   @Get(':id')
   // @HttpCode(500) //控制状态码
-  findId(@Param() params, @Headers() Headers) {
-    console.log(params, Headers, '1');
+  findId(@Param() params, @Headers() headers) {
+    console.log(params, headers, '1');
     return {
       code: 200,
     };
