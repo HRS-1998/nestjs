@@ -1,10 +1,16 @@
 import { NestFactory } from '@nestjs/core';
+console.log('ss');
 import { AppModule } from './app.module';
+console.log(AppModule);
 import { VersioningType } from '@nestjs/common';
 import * as session from 'express-session';
+import { NestExpressApplication } from '@nestjs/platform-express';
+import { join } from 'path';
+import { Response } from './common/response';
+import { HttpFilter } from './common/filter';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
   //开启版本控制
   app.enableVersioning({
     type: VersioningType.URI,
@@ -18,6 +24,11 @@ async function bootstrap() {
   //     cookie: { httpOnly: true, maxAge: 999999 },
   //   }),
   // );
+  app.useStaticAssets(join(__dirname, 'images'), {
+    prefix: '/cy', //配置访问前缀  http://localhost:3000/cy/1697945317382.png
+  });
+  app.useGlobalInterceptors(new Response());
+  app.useGlobalFilters(new HttpFilter());
   await app.listen(3000);
 }
 bootstrap();

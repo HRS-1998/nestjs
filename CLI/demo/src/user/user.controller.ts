@@ -28,7 +28,7 @@ export class UserController {
   findAll(@Query() query) {
     console.log(query);
     return {
-      code: 2001,
+      code: 200,
       message: query.name,
     };
   }
