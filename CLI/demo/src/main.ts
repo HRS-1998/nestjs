@@ -1,7 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 console.log('ss');
 import { AppModule } from './app.module';
-console.log(AppModule);
 import { VersioningType } from '@nestjs/common';
 import * as session from 'express-session';
 import { NestExpressApplication } from '@nestjs/platform-express';
@@ -10,7 +9,9 @@ import { Response } from './common/response';
 import { HttpFilter } from './common/filter';
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, {
+    // logger: false, //不d打开logger
+  });
   //开启版本控制
   app.enableVersioning({
     type: VersioningType.URI,
