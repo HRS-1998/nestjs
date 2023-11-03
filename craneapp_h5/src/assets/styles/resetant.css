@@ -1,0 +1,162 @@
+.ant-layout-header {
+  background: #F5F7FA;
+  height: 6.67vh;
+  font-size: 20px;
+  color: #1D2129;
+  line-height: 6.67vh;
+  padding: 0 1.11vw;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.ant-layout-content {
+  background: #fff;
+  padding: 24px 1.39vw;
+  margin: 0;
+  box-sizing: border-box;
+  /* min-height: 400px; */
+}
+
+/* 修改menu样式 */
+.ant-menu-inline>.ant-menu-item,
+.ant-menu-inline>.ant-menu-submenu>.ant-menu-submenu-title,
+.ant-menu-vertical-left>.ant-menu-item,
+.ant-menu-vertical-left>.ant-menu-submenu>.ant-menu-submenu-title,
+.ant-menu-vertical-right>.ant-menu-item,
+.ant-menu-vertical-right>.ant-menu-submenu>.ant-menu-submenu-title,
+.ant-menu-vertical>.ant-menu-item,
+.ant-menu-vertical>.ant-menu-submenu>.ant-menu-submenu-title {
+  height: 48px;
+  line-height: 48px;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #fff;
+}
+
+/* 下面两个顺序不要调换 */
+.ant-menu-inline .ant-menu-item:after,
+.ant-menu-vertical .ant-menu-item:after,
+.ant-menu-vertical-left .ant-menu-item:after,
+.ant-menu-vertical-right .ant-menu-item:after {
+  border-right: 1px solid #4E5969;
+  border-top: 1px solid #4E5969;
+  bottom: 0;
+  content: "";
+  opacity: 1;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  transition: transform .15s cubic-bezier(.215, .61, .355, 1), opacity .15s cubic-bezier(.215, .61, .355, 1);
+}
+
+.ant-menu-inline .ant-menu-item-selected:after,
+.ant-menu-inline .ant-menu-selected:after {
+  border-right: 1px solid #165DFF;
+  border-top: 1px solid #165DFF;
+  content: "";
+  opacity: 1;
+  position: absolute;
+  right: 20px;
+  /* transform: scaleY(1); */
+  transition: transform .15s cubic-bezier(.645, .045, .355, 1), opacity .15s cubic-bezier(.645, .045, .355, 1);
+  transform: rotate(45deg);
+  top: 20px;
+}
+
+.ant-form-item-label {
+  display: flex;
+  justify-content: flex-end;
+  line-height: 16px;
+  width: 70px;
+}
+
+.ant-form-item-label>.label {
+  white-space: normal;
+  text-align: right;
+  color: #8a8a8a;
+  padding-right: 0px;
+  font-size: 12px;
+  cursor: text;
+}
+
+.ant-form-item-label>.label::after {
+  content: none !important;
+}
+.ant-form-item-control-input .ant-form-item-control-input-content {
+  cursor: text;
+  display: flex;
+}
+.ant-divider-horizontal {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+/* 输入框 */
+.ant-input-group .ant-input {
+  float: left;
+  margin-bottom: 0;
+  text-align: inherit;
+  width: 100%;
+  background: #F7F8FA;
+  height: 3.5;
+}
+
+.ant-input:hover,
+.ant-input:focus {
+  box-shadow: none;
+}
+.ant-select-multiple .ant-select-selector::after{
+  content: '';
+}
+
+/* 表格 */
+.ant-table-thead {
+  background: rgba(0, 0, 0, 0);
+
+}
+
+.ant-table-thead>tr>th {
+  font-size: 14px;
+  font-weight: 600;
+}
+.ant-table-empty .ant-table-tbody>tr.ant-table-placeholder {
+  height:calc(87.9vh - 395px);
+}
+
+.ant-picker {
+  width: 100%
+}
+
+.ant-picker ::placeholder {
+  text-align: center
+}
+
+.ant-modal-body {
+  word-wrap: normal;
+}
+
+.ant-input-number {
+  width: 50px;
+}
+
+.ant-upload-list-picture .ant-upload-list-item-name,
+.ant-upload-list-text .ant-upload-list-item-name {
+  font-size: 10px;
+}
+
+.ant-select {
+  overflow: hidden;
+}
+.sany_program{
+   max-height: 140px;
+   overflow: hidden; 
+   /* overflow-y: hidden;
+   /* color:#333 */
+}
+.sany_logger_select{
+   line-height: inherit;
+
+}
