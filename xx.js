@@ -2,5 +2,5 @@ let res = [];
 let c = {};
 console.log(res.join, c.join);
 function test() {
-  return 12;
+  return 1252;
 }
