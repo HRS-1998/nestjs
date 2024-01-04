@@ -1,5 +1,6 @@
-//收发邮件
+//收发邮件   qq邮箱设置中开启smtp,imap,pop3等服务，拿到授权码
 const nodemailer = require("nodemailer");
+const fs = require("fs");
 
 const transporter = nodemailer.createTransport({
   host: "smtp.qq.com",
@@ -14,9 +15,10 @@ const transporter = nodemailer.createTransport({
 async function main() {
   const info = await transporter.sendMail({
     from: '"guang" <3615739566@qq.com>',
-    to: "2563661991@qq.com",
-    subject: "Hello node email_test",
-    text: "this is a node email test hours",
+    to: "'hours' <2563661991@qq.com>",
+    subject: "这是一个测试node 发送邮件功能",
+    // text: "this is a node email test hours",
+    html: fs.readFileSync("./index.html"),
   });
 
   console.log("邮件发送成功：", info.messageId);
